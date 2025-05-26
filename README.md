@@ -16,7 +16,7 @@
 
 ## 📌 Features
 
-### 🏠 Dashboard Homepage (`/`)
+### 🏠 Dashboard Homepage (`/dashboard`)
 
 * Fetches employee data from [dummyjson.com](https://dummyjson.com/users?limit=20)
 * Randomized department and performance rating
@@ -150,18 +150,20 @@ npm run dev
 * **Google Console OAuth Redirect URI:**
 
   ```
+  [https://hr-dashboard-next.onrender.com/api/auth/callback/google](https://hr-dashboard-next.onrender.com/api/auth/callback/google)
+
   ```
 
-[https://hr-dashboard-next.onrender.com/api/auth/callback/google](https://hr-dashboard-next.onrender.com/api/auth/callback/google)
-
-```
 - **JavaScript Origin:**
-```
 
+```
 [https://hr-dashboard-next.onrender.com](https://hr-dashboard-next.onrender.com)
 
 ```
 - **NextAuth Strategy:** JWT mode (no database)
+
+
+
 
 ---
 
@@ -179,7 +181,7 @@ npm run dev
 ---
 
 ## ✅ Advanced Features Implemented
-
+```
 | Feature | Status |
 |--------|--------|
 | Responsive UI | ✅ |
