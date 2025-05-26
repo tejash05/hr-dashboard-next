@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   }
 
   const users = getUsers()
-  const exists = users.find(u => u.email === email)
+  const exists = users.find((u: { email: string }) => u.email === email)
   if (exists) {
     return NextResponse.json({ error: 'User already exists' }, { status: 409 })
   }
