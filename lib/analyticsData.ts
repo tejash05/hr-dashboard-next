@@ -1,17 +1,23 @@
-// lib/analyticsData.ts
 const departments = ['Engineering', 'HR', 'Marketing', 'Sales', 'Design']
+
+interface EnrichedUser {
+  department: string
+  rating: number
+  [key: string]: any
+}
 
 export async function getAverageRatingsData() {
   const res = await fetch('https://dummyjson.com/users?limit=20')
   const data = await res.json()
 
-  const enriched = data.users.map((user: any) => ({
+  const enriched: EnrichedUser[] = data.users.map((user: any) => ({
     ...user,
     department: departments[Math.floor(Math.random() * departments.length)],
     rating: Math.floor(Math.random() * 5) + 1,
   }))
 
   const grouped: Record<string, number> = {}
+
   departments.forEach((dept) => {
     const users = enriched.filter((u) => u.department === dept)
     const avg = users.reduce((sum, u) => sum + u.rating, 0) / (users.length || 1)
