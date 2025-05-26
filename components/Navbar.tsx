@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white dark:bg-gray-800 shadow px-6 py-4 flex justify-between items-center relative">
       <div className="flex gap-6 items-center">
-        <Link href="/" className="font-semibold hover:text-blue-500">Dashboard</Link>
+        <Link href="/dashboard" className="font-semibold hover:text-blue-500">Dashboard</Link>
         <Link href="/bookmarks" className="hover:text-blue-500">Bookmarks</Link>
         <Link href="/analytics" className="hover:text-blue-500">Analytics</Link>
       </div>
