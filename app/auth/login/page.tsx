@@ -35,7 +35,7 @@ export default function LoginPage() {
 
       if (res?.ok) {
         toast.success('Logged in successfully')
-        router.push('/')
+        router.push('/dashboard')
       } else {
         toast.error(res?.error || 'Invalid credentials')
       }
