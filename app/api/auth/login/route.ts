@@ -8,8 +8,9 @@ export async function POST(req: Request) {
   console.log('Login Attempt:', email, password)
   console.log('Stored Users:', users)
 
-  const user = users.find(u => u.email === email && u.password === password)
-
+const user = users.find((u: { email: string; password: string }) => 
+  u.email === email && u.password === password
+)
   if (!user) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
   }
