@@ -123,7 +123,7 @@ export default function DashboardPage() {
             <select
               id="rating"
               multiple
-              value={selectedRatings}
+              value={selectedRatings.map(String)} // ✅ FIXED
               onChange={(e) =>
                 setSelectedRatings([...e.target.selectedOptions].map((o) => Number(o.value)))
               }
