@@ -1,77 +1,75 @@
 # 💼 HR Dashboard – Performance Management System
 
-**HR Dashboard** is a feature-rich HR performance dashboard that allows HR managers to manage employee data, track performance, bookmark profiles, and view actionable analytics. Built using **Next.js (App Router)**, **Tailwind CSS**, **Zustand**, and **NextAuth.js**, it delivers a responsive, secure, and visually appealing experience.
+**HR Dashboard** is a full-featured HR performance dashboard built with modern web tools including **Next.js (App Router)**, **Tailwind CSS**, **Zustand**, **Chart.js**, and **NextAuth.js**. It offers HR managers a seamless and intuitive interface for managing employee data, tracking performance, bookmarking profiles, and viewing actionable analytics.
 
 ---
 
 ## 🚀 Why HR Dashboard?
 
-- ✅ Employee management with real-time filters and pagination
-- ✅ Bookmarking and promoting employees with UI feedback
-- ✅ Dark mode, skeleton loaders, and animation transitions
-- ✅ Google OAuth + Credential-based authentication (NextAuth.js)
-- ✅ Visual analytics for performance and bookmarking trends
+* ✅ Employee management with real-time filters and pagination
+* ✅ Bookmarking and promoting employees with toast notifications
+* ✅ Dark mode, skeleton loaders, and animation transitions
+* ✅ Google OAuth + Credential-based authentication (NextAuth.js)
+* ✅ Visual analytics for department-wise performance and bookmark trends
 
 ---
 
 ## 📌 Features
 
-### 🏠 Dashboard Homepage (/)
-- Fetches employee data from [dummyjson.com](https://dummyjson.com/users?limit=20)
-- Random department and performance rating assignment
-- Cards show: Name, Email, Age, Department, Stars, and Actions (View, Bookmark, Promote)
+### 🏠 Dashboard Homepage (`/`)
+
+* Fetches employee data from [dummyjson.com](https://dummyjson.com/users?limit=20)
+* Randomized department and performance rating
+* Cards display: Name, Email, Age, Department, Rating Stars
+* Actions: View Details, Bookmark, Promote
 
 ### 🔍 Search & Filter
-- 🔎 Live search by name/email/department
-- 🏢 Multi-select department filter
-- ⭐ Filter by rating (1–5)
 
-### 👤 Employee Details Page (/employee/[id])
-- Detailed profile view including mock: Bio, Phone, Department
-- ⭐ Star badge for ratings
-- 🗂️ Tabbed UI: Overview, Projects, Feedback
-- ✍️ Feedback form with toast notifications
+* 🔎 Real-time search by name, email, or department
+* 🏢 Multi-select department filter
+* ⭐ Multi-select rating filter (1–5 stars)
 
-### 📌 Bookmarks (/bookmarks)
-- View all bookmarked users
-- Unbookmark or promote with one click
+### 👤 Employee Details Page (`/employee/[id]`)
 
-### 📊 Analytics (/analytics)
-- Department-wise average ratings chart
-- Weekly bookmark trends (mocked)
-- Built with Chart.js and responsive charts
+* Full user profile with email, phone, department, bio, etc.
+* Tabbed interface: Overview, Projects, Feedback
+* Feedback form with validation and toast notifications
+
+### 📌 Bookmark Manager (`/bookmarks`)
+
+* Displays all bookmarked employees
+* Features to remove bookmarks and promote directly
+
+### 📊 Analytics (`/analytics`)
+
+* Chart.js-based visualizations:
+
+  * 📈 Department-wise average rating chart
+  * 📉 Weekly bookmark trends (mocked)
 
 ### 🔐 Authentication
-- Google OAuth + Custom Credentials Login (NextAuth.js)
-- Toggle between login and register modes
-- Protected routes with session handling
+
+* Google OAuth and Custom Credentials login
+* Toggle between Sign In and Register
+* Session-based route protection
 
 ### ➕ Create User Modal
-- Modal for adding new employee with validation
-- Generates random ID + accepts all fields
+
+* Add new employees with modal form
+* Form validation and toast confirmation
 
 ---
 
 ## 🧰 Tools Used
 
-- **Next.js App Router**
-- **React 18+**
-- **Tailwind CSS**
-- **Zustand**
-- **NextAuth.js**
-- **Chart.js**
-- **React Hot Toast**
-- **Framer Motion**
-
----
-
-## 🛠️ Tech Stack Badges
-
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart-dot-js&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-000000?style=for-the-badge&logo=zustand&logoColor=white)
-![NextAuth.js](https://img.shields.io/badge/NextAuth.js-3b82f6?style=for-the-badge&logo=next.js&logoColor=white)
+* **Next.js App Router** – Routing and page rendering
+* **React 18+** – Component-based UI
+* **Tailwind CSS** – Utility-first styling
+* **Zustand** – Lightweight global state management
+* **NextAuth.js** – Authentication with Google OAuth and Credentials
+* **Chart.js** – Analytics and performance visualization
+* **Framer Motion** – Smooth tab transitions
+* **React Hot Toast** – UX feedback notifications
 
 ---
 
@@ -79,48 +77,67 @@
 
 ```
 hr-dashboard-next/
-├── app/                        # Next.js App Router structure
-│   ├── page.tsx               # Dashboard page
-│   ├── analytics/             # Analytics page and chart components
-│   ├── auth/                  # Login and Register logic
-│   └── employee/[id]/         # Dynamic route for employee details
-├── components/                # Reusable UI components (Card, Modal, Navbar, etc.)
-├── hooks/                     # Custom React hooks (e.g., useSearch)
-├── lib/                       # Utility functions and mock logic
-├── store/                     # Zustand state management (bookmarks)
-├── public/                    # Static assets (if any)
-├── styles/                    # Global and Tailwind styles
-├── .env                       # Google OAuth & NextAuth credentials
-└── README.md                  # Documentation
+├── app/                  # App Router pages
+│   ├── page.tsx         # Root route (redirects to login)
+│   ├── dashboard/       # Dashboard view
+│   ├── analytics/       # Analytics charts
+│   ├── auth/            # Login/Register routes
+│   └── employee/[id]/   # Dynamic employee profile
+├── components/          # Navbar, Card, Modals, Charts
+├── hooks/               # useSearch, useDebounce
+├── lib/                 # mock data, authOptions
+├── store/               # Zustand store (bookmarks)
+├── public/              # Static assets (screenshots)
+├── styles/              # Tailwind CSS styles
+├── .env.local           # Environment variables (local dev)
+└── README.md            # Project documentation
 ```
+
+---
+
+## 📸 Screenshots
+
+> These images are stored in `/public/screenshots/`
+
+* **Login/Register**
+  ![Login](./public/screenshots/login.png)
+* **Dashboard**
+  ![Dashboard](./public/screenshots/Dashboard.png)
+* **Bookmarks**
+  ![Bookmarks](./public/screenshots/bookmarks.png)
+* **Employee Details**
+  ![Details](./public/screenshots/employee-details.png)
+* **Analytics (Dark + Light)**
+  ![Analytics Dark](./public/screenshots/analytics.png)
+  ![Analytics Light](./public/screenshots/white-analytics.png)
 
 ---
 
 ## ⚙️ Setup Instructions
 
-### 🔹 1. Clone the Repo
+### 🔹 Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/hr-dashboard.git
-cd hr-dashboard
+git clone https://github.com/tejash05/hr-dashboard-next.git
+cd hr-dashboard-next
 ```
 
-### 🔹 2. Install Dependencies
+### 🔹 Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 🔹 3. Configure .env.local
+### 🔹 Configure `.env.local`
 
 ```env
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=https://hr-dashboard-next.onrender.com
 ```
 
-### 🔹 4. Run Locally
+### 🔹 Run Locally
 
 ```bash
 npm run dev
@@ -128,25 +145,29 @@ npm run dev
 
 ---
 
-## 🖥️ Screenshots
+## 🔐 Authentication Setup
 
-<img src="./public/screenshots/login.png" width="600"/><br/>
-Login / Register
+* **Google Console OAuth Redirect URI:**
 
-<img src="./public/screenshots/Dashboard.png" width="600"/><br/>
-Dashboard Page
+  ```
+  ```
 
-<img src="./public/screenshots/bookmarks.png" width="600"/><br/>
-Bookmarks Page
+[https://hr-dashboard-next.onrender.com/api/auth/callback/google](https://hr-dashboard-next.onrender.com/api/auth/callback/google)
 
-<img src="./public/screenshots/employee-details.png" width="600"/><br/>
-Employee Profile
+```
+- **JavaScript Origin:**
+```
 
-<img src="./public/screenshots/analytics.png" width="600"/><br/>
-Analytics Charts
+[https://hr-dashboard-next.onrender.com](https://hr-dashboard-next.onrender.com)
 
-<img src="./public/screenshots/white-analytics.png" width="600"/><br/>
-Analytics Charts White Theme
+```
+- **NextAuth Strategy:** JWT mode (no database)
+
+---
+
+## 🌐 Live Demo
+
+> 🔗 [https://hr-dashboard-next.onrender.com](https://hr-dashboard-next.onrender.com)
 
 ---
 
@@ -157,5 +178,22 @@ Analytics Charts White Theme
 
 ---
 
-## 🌐 Live Link (Optional)
-> https://hr-dashboard-next.onrender.com
+## ✅ Advanced Features Implemented
+
+| Feature | Status |
+|--------|--------|
+| Responsive UI | ✅ |
+| Dark/Light Mode | ✅ |
+| Protected Routes | ✅ |
+| Zustand Global State | ✅ |
+| Auth (Google + Credentials) | ✅ |
+| Chart.js Integration | ✅ |
+| Add New Users | ✅ |
+| Framer Motion Transitions | ✅ |
+| Search + Filters | ✅ |
+| Bookmark + Promote Actions | ✅ |
+| Feedback Modal + Toast | ✅ |
+
+> ✅ Everything from the challenge brief has been implemented + enhancements.
+
+```
