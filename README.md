@@ -133,7 +133,7 @@ npm run dev
 <img src="./public/screenshots/login.png" width="600"/><br/>
 Login / Register
 
-<img src="./public/screenshots/dashboard.png" width="600"/><br/>
+<img src="./public/screenshots/Dashboard.png" width="600"/><br/>
 Dashboard Page
 
 <img src="./public/screenshots/bookmarks.png" width="600"/><br/>
@@ -145,6 +145,9 @@ Employee Profile
 <img src="./public/screenshots/analytics.png" width="600"/><br/>
 Analytics Charts
 
+<img src="./public/screenshots/white-analytics.png" width="600"/><br/>
+Analytics Charts White Theme
+
 ---
 
 ## ✨ Contributor
@@ -155,4 +158,4 @@ Analytics Charts
 ---
 
 ## 🌐 Live Link (Optional)
-> Coming Soon on Vercel or Render
+> https://hr-dashboard-next.onrender.com
