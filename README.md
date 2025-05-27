@@ -100,7 +100,7 @@ hr-dashboard-next/
 > These images are stored in `/public/screenshots/`
 
 * **Mobile View**
-  ![Login](./public/screenshots/mobile-view.png)
+  ![Login](./public/screenshots/phone-view.png)
 * **Login/Register**
   ![Login](./public/screenshots/login.png)
 * **Dashboard (light + Dark)**
