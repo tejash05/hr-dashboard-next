@@ -1,21 +1,21 @@
+// app/layout.tsx
 import './globals.css'
-import Navbar from '@/components/Navbar'
 import { Toaster } from 'react-hot-toast'
-import type { Metadata } from 'next'
+import Navbar from '@/components/Navbar'
 import Providers from './providers'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'HR Dashboard',
   description: 'Manage employees effectively',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <html lang="en" className="h-full">
+      <body className="h-full m-0 p-0 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
         <Providers>
           <Navbar />
-          <main className="p-4">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Toaster position="top-right" reverseOrder={false} />
         </Providers>
       </body>
