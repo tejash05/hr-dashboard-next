@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/styled-engine": "^7.1.0",
     "@mui/x-charts": "^8.4.0",
     "chart.js": "^4.4.9",
     "framer-motion": "^12.12.2",
