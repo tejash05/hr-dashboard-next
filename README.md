@@ -99,17 +99,19 @@ hr-dashboard-next/
 
 > These images are stored in `/public/screenshots/`
 
+* **Mobile View**
+  ![Login](./public/screenshots/mobile-view.png)
 * **Login/Register**
   ![Login](./public/screenshots/login.png)
-* **Dashboard**
+* **Dashboard (light + Dark)**
   ![Dashboard](./public/screenshots/Dashboard.png)
+  ![Dashboard](./public/screenshots/light-dashboard.png)
 * **Bookmarks**
   ![Bookmarks](./public/screenshots/bookmarks.png)
 * **Employee Details**
   ![Details](./public/screenshots/employee-details.png)
-* **Analytics (Dark + Light)**
+* **Analytics **
   ![Analytics Dark](./public/screenshots/analytics.png)
-  ![Analytics Light](./public/screenshots/white-analytics.png)
 
 ---
 
